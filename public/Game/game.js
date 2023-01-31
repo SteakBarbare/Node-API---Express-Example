@@ -4,7 +4,7 @@ const CharacterHitpoints = document.querySelector(".CharacterHitpoints");
 const url = "http://localhost:3000/characters";
 fetch(url, {
   method: "get",
-  mode: "no-cors",
+  // mode: "no-cors",
   headers: new Headers({
     "Content-Type": "application/json"
   })
