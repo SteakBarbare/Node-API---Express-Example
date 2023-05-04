@@ -6,11 +6,13 @@ const cors = require("cors");
 
 const corsOptions = {
   origin: "*",
-  credentials: true, //access-control-allow-credentials:true
+  //access-control-allow-credentials:true
+  credentials: true,
   optionSuccessStatus: 200
 };
 
-app.use(cors(corsOptions)); // Use this after the variable declaration
+// Use this after the variable declaration
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(
@@ -51,5 +53,5 @@ var server = app.listen(8081, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log("Example app listening at http://%s:%s", host, port);
+  console.log("Example server listening at http://%s:%s", host, port);
 });
