@@ -1,12 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 const charactersRouter = require("./routes/characters");
-const cors = require("cors");
 
 const corsOptions = {
   origin: "*",
-  //access-control-allow-credentials:true
   credentials: true,
   optionSuccessStatus: 200
 };
@@ -49,9 +48,9 @@ app.listen(port, () => {
 // Let the "public" folder be seen by everyone, this is where the game logic should be placed
 app.use(express.static("public"));
 
-var server = app.listen(8081, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+let server = app.listen(8081, function () {
+  let host = server.address().address;
+  let port = server.address().port;
 
   console.log("Example server listening at http://%s:%s", host, port);
 });

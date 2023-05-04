@@ -1,3 +1,4 @@
+// Simple rendering functions used to have beautiful data on screen
 function getOffset(currentPage = 1, listPerPage) {
   return (currentPage - 1) * [listPerPage];
 }

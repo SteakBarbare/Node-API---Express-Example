@@ -1,17 +1,20 @@
-var mysql = require("mysql");
+let mysql = require("mysql");
 
-var con = mysql.createConnection({
+// Prepare the connection to the database named "dbTest"
+let con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "dbTest"
 });
 
+// Tries to connect
 con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "INSERT INTO characters (name, hitpoints) VALUES ?";
-  var values = [
+  // If it works, insert 4 new rows inside the characters table
+  let sql = "INSERT INTO characters (name, hitpoints) VALUES ?";
+  let values = [
     ["Bender B Rodriguez", "345"],
     ["Nicolas Cage", "200"],
     ["George Abitbol", "300"],
